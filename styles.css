@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Syncopate:wght@400;700&display=swap');
+
+:root {
+    --swazi-red: #8B2E2E;
+    --swazi-blue: #2E4466;
+    --swazi-yellow: #C4A000;
+    --dark-bg: #0f0f0f;
+    --glass-bg: rgba(0, 0, 0, 0.04);
+    --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    background-color: #ffffff;
+    color: #111827;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, .font-display {
+    font-family: 'Syncopate', sans-serif;
+}
+
+/* Swazi Pattern Background - Subtle overlay */
+.swazi-pattern {
+    background-image: 
+        linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+        linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+        linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+        linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+        linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222),
+        linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    opacity: 0.05;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Snap Scroll Container */
+.snap-container {
+    height: auto;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    scroll-behavior: smooth;
+}
+
+.section {
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding managed via Tailwind classes */
+    scroll-margin-top: calc(6rem + env(safe-area-inset-top));
+}
+
+main {
+    padding-top: 0; /* Managed per section or via first section padding */
+}
+
+@media (max-width: 768px) {
+    /* Padding managed via Tailwind */
+}
+
+/* add natural spacing between consecutive sections */
+.section + .section {
+    margin-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 68, 102, 0.35);
+    border-radius: 8px;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--swazi-yellow);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e6bd00;
+}
+
+/* Text Selection */
+::selection {
+    background: var(--swazi-red);
+    color: white;
+}
+
+/* 3D Nav Link Hover */
+.nav-link {
+    transition: transform 0.3s ease, color 0.3s ease;
+    transform-style: preserve-3d;
+}
+.nav-link:hover {
+    transform: translateZ(20px) scale(1.1);
+    color: var(--swazi-yellow);
+    text-shadow: 0 0 10px rgba(196, 160, 0, 0.5);
+}
+
+/* Audio Player */
+.player-progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    outline: none;
+}
+.player-progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--swazi-yellow);
+    cursor: pointer;
+}
+
+/* Gallery Hover */
+.gallery-item {
+    overflow: hidden;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+}
+.gallery-item img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+.gallery-item:hover {
+    z-index: 10;
+}
+
+/* Glow effects */
+.glow-green {
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+}
+.glow-green:hover {
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .glass-card {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    .swazi-pattern {
+        display: none;
+    }
+    nav {
+        padding: 0.75rem 1rem;
+    }
+    .nav-link {
+        transform: none;
+    }
+}

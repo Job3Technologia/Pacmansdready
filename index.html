@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PacMan SD | Hip-Hop Artist & Promoter</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        swazi: {
+                            red: '#8B2E2E',
+                            blue: '#2E4466',
+                            yellow: '#C4A000',
+                        },
+                        dark: '#0f0f0f'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="text-center">
+            <h1 class="font-display text-4xl md:text-6xl text-swazi-yellow animate-pulse tracking-widest">PACMAN SD</h1>
+            <p class="text-gray-400 mt-2 tracking-widest">LOADING EXPERIENCE</p>
+        </div>
+    </div>
+
+    <!-- Background Pattern -->
+    <div class="swazi-pattern"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 p-4 md:p-6 flex justify-between items-center bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <a href="#home" class="font-display text-xl md:text-2xl font-bold tracking-tighter text-gray-900 hover:text-swazi-yellow transition-colors relative z-50">
+            PM<span class="text-swazi-red">SD</span>
+        </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 bg-white/70 backdrop-blur-sm px-8 py-3 rounded-full border border-gray-200">
+            <a href="#home" class="nav-link text-xs uppercase tracking-widest font-semibold text-gray-700 hover:text-gray-900">Home</a>
+            <a href="#music" class="nav-link text-xs uppercase tracking-widest font-semibold text-gray-700 hover:text-gray-900">Music</a>
+            <a href="#booking" class="nav-link text-xs uppercase tracking-widest font-semibold text-gray-700 hover:text-gray-900">Booking</a>
+            <a href="#gallery" class="nav-link text-xs uppercase tracking-widest font-semibold text-gray-700 hover:text-gray-900">Gallery</a>
+            <a href="#events" class="nav-link text-xs uppercase tracking-widest font-semibold text-gray-700 hover:text-gray-900">Events</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="#booking" class="hidden md:inline-block bg-swazi-red hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold text-xs tracking-widest transition-all hover:scale-105 shadow-lg shadow-red-900/30">
+                BOOK NOW
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-900 text-2xl relative z-50 focus:outline-none p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[40] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300">
+            <div class="absolute inset-0 bg-swazi-pattern opacity-5"></div>
+            <div class="flex flex-col space-y-6 text-center relative z-10">
+                <a href="#home" class="mobile-link text-3xl font-display font-bold text-gray-900 hover:text-swazi-red tracking-widest transition-colors">Home</a>
+                <a href="#music" class="mobile-link text-3xl font-display font-bold text-gray-900 hover:text-swazi-red tracking-widest transition-colors">Music</a>
+                <a href="#booking" class="mobile-link text-3xl font-display font-bold text-gray-900 hover:text-swazi-red tracking-widest transition-colors">Booking</a>
+                <a href="#gallery" class="mobile-link text-3xl font-display font-bold text-gray-900 hover:text-swazi-red tracking-widest transition-colors">Gallery</a>
+                <a href="#events" class="mobile-link text-3xl font-display font-bold text-gray-900 hover:text-swazi-red tracking-widest transition-colors">Events</a>
+                <a href="#booking" class="mobile-link inline-block bg-swazi-red text-white px-8 py-3 rounded-full font-bold text-sm tracking-widest shadow-lg shadow-red-900/40 mt-6">
+                    BOOK NOW
+                </a>
+            </div>
+            
+            <div class="absolute bottom-12 flex space-x-8">
+                <a href="https://tiktok.com/@pacman_sd" target="_blank" class="text-gray-600 text-2xl hover:text-swazi-blue"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@PacMan_SD" target="_blank" class="text-gray-600 text-2xl hover:text-swazi-blue"><i class="fab fa-youtube"></i></a>
+                <a href="https://amazon.co.jp/music/player/albums/B0G3XV8PGV?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&ref=dm_sh_jjMuzhVoHGaUfrtJstTihGREU" target="_blank" class="text-gray-600 text-2xl hover:text-swazi-blue"><i class="fab fa-amazon"></i></a>
+                <a href="https://open.spotify.com/artist/7GfnpP2miqb48qz0WXz6Q5?si=LbuZSAeVQDmDiFH1WLiTsw" target="_blank" class="text-gray-600 text-2xl hover:text-swazi-blue"><i class="fab fa-spotify"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Scroll Container -->
+    <main class="snap-container">
+
+        <!-- Slide 1: Home -->
+        <section id="home" class="section relative min-h-screen flex items-center">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full pt-28 md:pt-24">
+                <div class="z-10 order-2 md:order-1 text-center md:text-left pb-10 md:pb-0">
+                    <h2 class="text-swazi-yellow tracking-widest text-xs md:text-sm font-bold mb-2 md:mb-4 uppercase">Ngwenya, Eswatini</h2>
+                    <h1 id="hero-title" class="font-display text-4xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 md:mb-6">
+                        PACMAN <span class="text-transparent bg-clip-text bg-gradient-to-r from-swazi-red to-swazi-blue">SD</span>
+                    </h1>
+                    <p class="text-gray-700 text-sm md:text-xl max-w-lg mb-6 md:mb-8 leading-relaxed mx-auto md:mx-0">
+                        Hip-Hop Artist | Event Organiser | Promoter
+                    </p>
+                    <p class="text-gray-600 text-xs md:text-sm max-w-md mb-6 md:mb-8 border-l-2 border-swazi-yellow pl-4 text-left mx-auto md:mx-0 bg-white/50 backdrop-blur-sm p-2 rounded-r-lg">
+                        PacMan SD is an Eswatini-based rapper delivering sharp lyricism and modern hip-hop with authenticity and confidence. A rising voice in Swazi hip-hop, he represents the new wave of Southern African rap.
+                    </p>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                        <a href="#music" class="border border-gray-900 hover:bg-gray-900 hover:text-white px-8 py-3 rounded-none font-display text-xs md:text-sm transition-all duration-300">
+                            LATEST MUSIC
+                        </a>
+                        <button id="open-bio-btn" class="bg-swazi-red text-white px-8 py-3 rounded-none font-display text-xs md:text-sm transition-all duration-300 hover:bg-red-700">
+                            READ FULL BIO
+                        </button>
+                    </div>
+                    <div class="flex justify-center md:justify-start space-x-6 items-center mt-8">
+                        <a href="https://tiktok.com/@pacman_sd" target="_blank" class="text-gray-600 hover:text-swazi-blue transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.youtube.com/@PacMan_SD" target="_blank" class="text-gray-600 hover:text-swazi-blue transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="https://amazon.co.jp/music/player/albums/B0G3XV8PGV?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&ref=dm_sh_jjMuzhVoHGaUfrtJstTihGREU" target="_blank" class="text-gray-600 hover:text-swazi-blue transition-colors"><i class="fab fa-amazon text-xl"></i></a>
+                        <a href="https://open.spotify.com/artist/7GfnpP2miqb48qz0WXz6Q5?si=LbuZSAeVQDmDiFH1WLiTsw" target="_blank" class="text-gray-600 hover:text-swazi-blue transition-colors"><i class="fab fa-spotify text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="relative order-1 md:order-2 flex justify-center items-center mt-4 md:mt-0">
+                    <div class="relative w-56 md:w-full max-w-md aspect-[3/4]">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-swazi-blue to-swazi-red opacity-20 rounded-2xl blur-xl"></div>
+                        <img id="hero-image" src="FB_IMG_1767419803312.jpg" alt="PacMan SD" class="relative w-full h-full object-cover rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Music -->
+        <section id="music" class="section bg-white">
+            <div class="container mx-auto px-6 max-w-5xl h-full flex flex-col justify-center pt-24 md:pt-0">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-2">DISCOGRAPHY</h2>
+                    <div class="w-24 h-1 bg-swazi-yellow mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                    <!-- Player Interface -->
+                    <div class="glass-card p-6 rounded-3xl w-full">
+                        <div id="music-player" class="w-full space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 shadow-md">
+                                    <img id="player-cover" src="cover.jpg" alt="Pacman SD cover" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p id="current-track" class="font-display text-base md:text-xl text-gray-900 truncate">Umdlalo Wemoya</p>
+                                    <p id="current-artist" class="text-xs md:text-sm text-gray-600 mt-1 truncate">Pacman SD</p>
+                                </div>
+                            </div>
+                            <div>
+                                <input id="progress-bar" type="range" min="0" max="100" value="0" class="player-progress w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-[10px] md:text-xs text-gray-500 mt-2">
+                                    <span id="current-time">0:00</span>
+                                    <span id="total-time">0:00</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-2">
+                                <button id="prev-btn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 transition-colors">
+                                    <i class="fas fa-backward"></i>
+                                </button>
+                                <button id="play-btn" class="w-14 h-14 rounded-full bg-swazi-yellow text-gray-900 flex items-center justify-center text-xl shadow-lg hover:bg-yellow-400 transform hover:scale-105 transition-all">
+                                    <i id="play-icon" class="fas fa-play"></i>
+                                </button>
+                                <button id="next-btn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 transition-colors">
+                                    <i class="fas fa-forward"></i>
+                                </button>
+                            </div>
+                             <a id="download-btn" class="block w-full text-center mt-4 py-2 rounded-xl border border-gray-200 text-xs font-semibold text-gray-600 hover:bg-gray-50 hover:text-swazi-blue transition-colors">
+                                <i class="fas fa-download mr-2"></i> Download Track
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Album List -->
+                    <div class="space-y-4 md:space-y-6 overflow-y-auto max-h-[30vh] md:max-h-[400px] custom-scrollbar pr-2">
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="0" data-file="AUD-20260107-WA0017.mp3" data-title="Umdlalo Wemoya" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="cover.jpg" class="w-full h-full object-cover" alt="Umdlalo Wemoya cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Umdlalo Wemoya</h4>
+                                <p class="text-xs text-gray-600">Pacman SD</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="1" data-file="AUD-20260107-WA0018.mp3" data-title="Thank You" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="cover.jpg" class="w-full h-full object-cover" alt="Thank You cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Thank You</h4>
+                                <p class="text-xs text-gray-600">Pacman SD</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="2" data-file="AUD-20260107-WA0019.mp3" data-title="Ziphi Lah [Feat. Mthobisi]" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="IMG-20251009-WA0030~2.png" class="w-full h-full object-cover" alt="Ziphi Lah cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Ziphi Lah</h4>
+                                <p class="text-xs text-gray-600">Feat. Mthobisi</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="3" data-file="AUD-20260107-WA0020.mp3" data-title="Black Anthem [Feat. SmoothRamz]" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="FB_IMG_1767419803312.jpg" class="w-full h-full object-cover" alt="Black Anthem cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Black Anthem</h4>
+                                <p class="text-xs text-gray-600">Feat. SmoothRamz</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="4" data-file="AUD-20260108-WA0001.mp3" data-title="Delayed Visions [Feat. Plord]" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="FB_IMG_1767419848838.jpg" class="w-full h-full object-cover" alt="Delayed Visions cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Delayed Visions</h4>
+                                <p class="text-xs text-gray-600">Feat. Plord</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="5" data-file="AUD-20260108-WA0002.mp3" data-title="Wrong Time" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="1000186736.png" class="w-full h-full object-cover" alt="Wrong Time cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Wrong Time</h4>
+                                <p class="text-xs text-gray-600">Pacman SD</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="6" data-file="AUD-20260108-WA0003.mp3" data-title="Army Commander" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="PSX_20251020_233755~3 (2) (1) (1) (1).png" class="w-full h-full object-cover" alt="Army Commander cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Army Commander</h4>
+                                <p class="text-xs text-gray-600">Pacman SD</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+
+                        <div class="track-item album-cover cursor-pointer bg-gray-100 p-4 rounded-xl flex items-center space-x-4 hover:bg-gray-200 transition-colors border border-gray-200" data-index="7" data-file="AUD-20260108-WA0004.mp3" data-title="Makasane" data-artist="Pacman SD">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img src="1000186749.png" class="w-full h-full object-cover" alt="Makasane cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Makasane</h4>
+                                <p class="text-xs text-gray-600">Pacman SD</p>
+                            </div>
+                            <div class="ml-auto text-swazi-yellow"><i class="fas fa-play-circle text-2xl"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Booking -->
+        <section id="booking" class="section">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full pt-24 md:pt-0">
+                <div class="order-2 md:order-1 pb-10 md:pb-0">
+                    <h2 class="font-display text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-gray-900 text-center md:text-left">
+                        BOOKING <br> <span class="text-swazi-blue">&</span> CONTACT
+                    </h2>
+                    <p class="text-gray-700 mb-6 md:mb-8 max-w-md text-sm md:text-base text-center md:text-left mx-auto md:mx-0">
+                        For bookings, features, and press inquiries. <br>
+                        Available for festivals, club performances, and events.
+                    </p>
+                    
+                    <div class="space-y-3 md:space-y-4 mb-6 md:mb-8 text-sm md:text-base bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-gray-100">
+                        <div class="flex items-center space-x-4 text-gray-700 justify-center md:justify-start">
+                            <i class="fas fa-envelope text-swazi-red w-6 text-center"></i>
+                            <span>Pacmansd0@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-gray-700 justify-center md:justify-start">
+                            <i class="fas fa-phone text-swazi-yellow w-6 text-center"></i>
+                            <span>+268 7827 0065</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-gray-700 justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt text-swazi-blue w-6 text-center"></i>
+                            <span>Ngwenya, Eswatini</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-left">
+                        <a href="https://wa.me/26878270065" class="glow-green bg-green-600 hover:bg-green-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold inline-flex items-center space-x-3 transition-all transform hover:-translate-y-1 text-sm md:text-base shadow-lg shadow-green-900/20">
+                            <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+                            <span>WHATSAPP BOOKING</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="booking-card" class="glass-card p-6 md:p-12 rounded-2xl order-1 md:order-2 w-full">
+                    <form class="space-y-4 md:space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name / Organization</label>
+                            <input id="booking-name" type="text" class="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:border-swazi-yellow focus:outline-none transition-colors text-base md:text-sm" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email Address</label>
+                            <input id="booking-email" type="email" class="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:border-swazi-yellow focus:outline-none transition-colors text-base md:text-sm" placeholder="name@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message</label>
+                            <textarea id="booking-message" rows="3" class="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-900 focus:border-swazi-yellow focus:outline-none transition-colors text-base md:text-sm" placeholder="Tell us about your event..."></textarea>
+                        </div>
+                        <p id="booking-error" class="hidden text-red-600 text-xs">Please enter your name and message.</p>
+                        <button id="send-whatsapp" type="button" class="w-full bg-gray-900 text-white font-display font-bold py-3 md:py-4 hover:bg-swazi-yellow hover:text-black transition-colors uppercase tracking-widest text-sm rounded-lg shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Gallery -->
+        <section id="gallery" class="section">
+            <div class="container mx-auto px-6 h-full flex flex-col justify-center pt-24 md:pt-0">
+                <div class="text-center mb-6 md:mb-10">
+                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-2">GALLERY</h2>
+                    <div class="w-24 h-1 bg-swazi-blue mx-auto"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto w-full">
+                    <div class="relative rounded-2xl overflow-hidden bg-black/80 aspect-[16/9] flex items-center justify-center">
+                        <img id="gallery-main-image" src="FB_IMG_1767419803312.jpg" alt="Gallery image" class="max-h-full max-w-full object-contain transition-transform duration-500">
+                        <button id="gallery-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white items-center justify-center hover:bg-black/80">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="gallery-next" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white items-center justify-center hover:bg-black/80">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs md:text-sm px-4 py-1 rounded-full">
+                            <span id="gallery-caption">LIVE</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex items-center justify-between md:justify-center gap-2 overflow-x-auto custom-scrollbar pb-1">
+                        <button class="gallery-thumb border-2 border-swazi-blue rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="0" data-src="FB_IMG_1767419803312.jpg" data-caption="LIVE">
+                            <img src="FB_IMG_1767419803312.jpg" alt="Live Performance" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="1" data-src="FB_IMG_1767419848838.jpg" data-caption="PORTRAIT">
+                            <img src="FB_IMG_1767419848838.jpg" alt="Portrait Mode" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="2" data-src="FB_IMG_1767419989329.jpg" data-caption="STAGE">
+                            <img src="FB_IMG_1767419989329.jpg" alt="Stage Presence" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="3" data-src="IMG-20251009-WA0030~2.png" data-caption="ARTWORK">
+                            <img src="IMG-20251009-WA0030~2.png" alt="Artwork Design" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="4" data-src="VideoCapture_20240807-220613~2.png" data-caption="STUDIO">
+                            <img src="VideoCapture_20240807-220613~2.png" alt="Studio Session" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="5" data-src="PSX_20251020_233755~3 (2) (1) (1) (1).png" data-caption="VIBE">
+                            <img src="PSX_20251020_233755~3 (2) (1) (1) (1).png" alt="Vibe" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="6" data-src="Primavera Fest & Local Awards 2025.jpg" data-caption="EVENTS">
+                            <img src="Primavera Fest & Local Awards 2025.jpg" alt="Primavera Fest" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="7" data-src="IMG-20260101-WA0008.jpg" data-caption="PROMO">
+                            <img src="IMG-20260101-WA0008.jpg" alt="Promo Shot" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="8" data-src="Photoroom-20251121_142235695.jpg" data-caption="FOCUS">
+                            <img src="Photoroom-20251121_142235695.jpg" alt="Clean Shot" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="9" data-src="1000186749.png" data-caption="ART">
+                            <img src="1000186749.png" alt="Cover Art" class="w-full h-full object-cover">
+                        </button>
+                        <button class="gallery-thumb border-2 border-transparent rounded-xl overflow-hidden flex-shrink-0 w-20 h-14 md:w-24 md:h-16" data-index="10" data-src="1000186736.png" data-caption="DESIGN">
+                            <img src="1000186736.png" alt="Cover Art" class="w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Events -->
+        <section id="events" class="section">
+            <div class="container mx-auto px-6 max-w-4xl h-full flex flex-col justify-center pt-24 md:pt-0">
+                <div class="text-center mb-6 md:mb-12">
+                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-2">TOUR DATES</h2>
+                    <div class="w-24 h-1 bg-swazi-red mx-auto"></div>
+                </div>
+
+                <div class="space-y-4 md:space-y-6 mb-8 md:mb-12">
+                    <div class="event-item glass-card p-6 rounded-xl text-center">
+                        <h3 class="font-bold text-lg md:text-xl text-gray-900">No upcoming events</h3>
+                        <p class="text-sm text-gray-600 mt-2">Stay tuned. Subscribe below for updates.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-swazi-blue to-purple-900 p-6 md:p-8 rounded-2xl text-center">
+                    <h3 class="font-display text-xl md:text-2xl font-bold mb-2">JOIN THE MOVEMENT</h3>
+                    <p class="text-gray-200 mb-4 md:mb-6 text-sm">Sign up for exclusive updates, drops, and show announcements.</p>
+                    <form class="flex flex-col md:flex-row max-w-md mx-auto gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-1 bg-white/20 border border-white/30 rounded-full px-6 py-3 text-white focus:outline-none focus:border-white text-sm">
+                        <button type="submit" class="bg-white text-black font-bold px-8 py-3 rounded-full hover:bg-gray-200 transition-colors text-sm">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="social" class="section bg-white">
+            <div class="container mx-auto px-6 max-w-5xl h-full flex flex-col justify-center pt-24 md:pt-0 pb-16">
+                <div class="text-center mb-6 md:mb-10">
+                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-2">LATEST ON FACEBOOK</h2>
+                    <div class="w-24 h-1 bg-swazi-blue mx-auto"></div>
+                    <p class="mt-4 text-sm md:text-base text-gray-600 max-w-xl mx-auto">
+                        Live updates, announcements and moments from PacMan SD’s official page.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl shadow-sm p-3 md:p-6">
+                    <div class="sk-ww-facebook-page-posts" data-embed-id="25643780"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Floating WhatsApp button (mobile only) -->
+    <a href="https://wa.me/26878270065" class="md:hidden fixed bottom-4 right-4 bg-green-600 text-white rounded-full shadow-lg shadow-green-900/40 px-4 py-3 flex items-center space-x-2 glow-green">
+        <i class="fab fa-whatsapp text-xl"></i>
+        <span class="text-xs font-bold">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Bio & Press Modal -->
+    <div id="bio-modal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-500">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md"></div>
+        <div class="relative z-10 container mx-auto px-4 md:px-6 h-full py-8 md:py-12 flex flex-col justify-center">
+            <button id="close-bio" class="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-swazi-yellow transition-colors text-3xl md:text-4xl z-50">&times;</button>
+            
+            <div class="bg-black/40 border border-gray-800 rounded-2xl p-6 md:p-12 overflow-y-auto max-h-[90vh] custom-scrollbar">
+                <h2 class="font-display text-3xl md:text-5xl text-swazi-yellow mb-6 md:mb-8 text-center">THE ARTIST</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                    <div class="space-y-6 text-gray-300 leading-relaxed">
+                        <h3 class="text-white font-bold text-xl uppercase tracking-widest border-b border-gray-700 pb-2">Biography</h3>
+                        <p>
+                            PacMan SD also known as Simphiwe Parkim is a hip-hop recording artist from Ngwenya Eswatini, recognized for his commanding delivery, lyrical precision, and authentic storytelling. Emerging from the country’s growing rap movement, he represents a new generation of artists focused on elevating Swazi hip-hop to international standards.
+                        </p>
+                        <p>
+                            His music reflects ambition, perseverance, and lived experience, delivered through confident flows and modern production. With a clear artistic vision and consistent output, PacMan SD continues to build a strong presence within the Southern African hip-hop landscape.
+                        </p>
+                        <p>
+                            Driven by passion and discipline, PacMan SD is steadily positioning himself as an artist to watch—both locally and beyond Eswatini’s borders.
+                        </p>
+
+                        <h3 class="text-white font-bold text-xl uppercase tracking-widest border-b border-gray-700 pb-2 mt-8">Style & Influences</h3>
+                        <p>
+                            PacMan SD’s sound blends contemporary hip-hop with raw lyrical content rooted in real-life experiences. His music balances street-inspired energy with polished production, making it accessible while remaining authentic.
+                        </p>
+                        <p class="text-sm italic text-gray-400">
+                            Often compared to Qibho Intellectual for his sharp lyricism and Siswati punchlines.
+                        </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-white font-bold text-xl uppercase tracking-widest border-b border-gray-700 pb-2">Career Highlights</h3>
+                            <ul class="mt-4 space-y-3 text-gray-300 text-sm">
+                                <li class="flex items-start"><i class="fas fa-star text-swazi-yellow mt-1 mr-3"></i> <span>Host and Headliner of <strong>#FillUpPrimavera</strong> (2025), gathering over 600 people at Ngwenya Oshoek.</span></li>
+                                <li class="flex items-start"><i class="fas fa-microphone text-swazi-yellow mt-1 mr-3"></i> <span>Host of The <strong>Primavera Local Awards 2025</strong>.</span></li>
+                                <li class="flex items-start"><i class="fas fa-building text-swazi-yellow mt-1 mr-3"></i> <span>Founder of <strong>Gas House Music</strong>.</span></li>
+                                <li class="flex items-start"><i class="fas fa-trophy text-swazi-yellow mt-1 mr-3"></i> <span><strong>Makasane</strong>: Song Of The Year 2025 Award.</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold text-xl uppercase tracking-widest border-b border-gray-700 pb-2">Press & Media</h3>
+                            <blockquote class="border-l-4 border-swazi-red pl-4 my-4 italic text-gray-400">
+                                “In the vibrant and competitive world of the country’s music scene, one name is rapidly raising to the top, Simphiwe Parkim, better known as PacMan SD.” <br>
+                                <span class="text-swazi-yellow not-italic text-xs font-bold">— Gcwala, Eswatini News, Nov 2025</span>
+                            </blockquote>
+                            <div class="text-xs text-gray-500 space-y-2 mt-4">
+                                <p><i class="fas fa-broadcast-tower mr-2"></i> Featured on EBIS 2 "Swazi Rhythm" & "Loyal To Local" (No. 1 Spot).</p>
+                                <p><i class="fas fa-newspaper mr-2"></i> Featured in Times of Eswatini & Eswatini Positive News.</p>
+                                <p><i class="fas fa-thumbs-up mr-2"></i> "Makasane" promo video reached 190,000+ views on Eswatini Celebs News.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[200] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center bg-black/95 backdrop-blur-xl">
+        <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-swazi-yellow transition-colors text-4xl z-50 p-2">&times;</button>
+        <div class="relative w-full max-w-5xl h-full p-4 flex flex-col items-center justify-center">
+            <img id="lightbox-image" src="" alt="Gallery Preview" class="max-h-[85vh] max-w-full object-contain rounded-lg shadow-2xl">
+            <p id="lightbox-caption" class="text-white font-display text-xl mt-4 tracking-widest"></p>
+        </div>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <script src="https://widgets.sociablekit.com/facebook-page-posts/widget.js" defer></script>
+    
+    <!-- Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
